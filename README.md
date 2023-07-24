@@ -8,6 +8,6 @@ Usage:
 from connection import KaggleDatasetConnection
 import streamlit as st
 
-conn = st.experimental_connection("kaggle_datasets", type=KaggleDatasetConnection, path='shivamb/netflix-shows')
-df = conn.get(ttl=3600)
+conn = st.experimental_connection("kaggle_datasets", type=KaggleDatasetConnection)
+df = conn.get(path='shivamb/netflix-shows', ttl=3600)
 ```
