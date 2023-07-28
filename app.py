@@ -18,12 +18,13 @@ You can view the connection source code
 [here](https://github.com/arsentievalex/kaggle-streamlit-data-connector/blob/main/connection.py).
 """
 
-st.info('While Kaggle offers datasets in different formats, this connector ONLY supports datasets with a single CSV file.')
+st.info('While Kaggle offers datasets in different formats, this connector ONLY supports CSV files')
 
 """
-A user can connect to a Kaggle dataset by providing the dataset path. 
+A user can connect to a Kaggle dataset by providing the dataset path and filename.
 The path is the part of the dataset URL after the domain name, the structure is following: username/dataset-name.
-For example, for the dataset https://www.kaggle.com/shivamb/netflix-shows, the path is `shivamb/netflix-shows`.
+For example, for the dataset https://www.kaggle.com/shivamb/netflix-shows, the path is `shivamb/netflix-shows`,
+and the file name is `netflix_titles.csv`.
 """
 
 """Using this example, the code to connect to the dataset would look like this:"""
@@ -33,7 +34,7 @@ from connection import KaggleDatasetConnection
 import streamlit as st
 
 conn = st.experimental_connection("kaggle_datasets", type=KaggleDatasetConnection)
-df = conn.get(path='shivamb/netflix-shows', ttl=3600)
+df = conn.get(path='shivamb/netflix-shows', filename='netflix_titles.csv', ttl=3600)
 """
 
 secrets = """
@@ -49,9 +50,10 @@ st.code(code, language='python')
 st.code(secrets, language='toml')
 
 st.subheader("Loading Netflix Movies and TV Shows dataset")
+
 # load data
 conn = st.experimental_connection("kaggle_datasets", type=KaggleDatasetConnection)
-df = conn.get(path='shivamb/netflix-shows', ttl=3600)
+df = conn.get(path='shivamb/netflix-shows', filename='netflix_titles.csv', ttl=3600)
 
 st.write('The dataset has {} rows and {} columns'.format(df.shape[0], df.shape[1]))
 
