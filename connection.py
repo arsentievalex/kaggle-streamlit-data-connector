@@ -18,7 +18,7 @@ class KaggleDatasetConnection(ExperimentalBaseConnection):
         # Initialize Kaggle API connection
         self.conn = KaggleApi()
 
-    def get(self, path, ttl):
+    def get(self, path, filename, ttl):
         @st.cache_data(ttl=ttl)
         def _get(path=path):
             # Authenticate to Kaggle
@@ -30,13 +30,10 @@ class KaggleDatasetConnection(ExperimentalBaseConnection):
             # Dataset is downloaded as a zip, so we need to extract it
             with zipfile.ZipFile(file_name, 'r') as zip_ref:
                 zip_ref.extractall('.')
-
-            # Assuming there's a single CSV file in the dataset, we can load it into a DataFrame
-            csv_file = [file for file in os.listdir('.') if file.endswith('.csv')][0]
-            df = pd.read_csv(csv_file)
+            # Read csv file to df
+            df = pd.read_csv(filename)
             return df
         return _get(path)
-
 
 
 
