@@ -5,6 +5,10 @@ Basic Kaggle-Streamlit connector for CSV files. Built using ExperimentalBaseConn
 
 Usage:
 ```python
+pip install st-kaggle-connector
+```
+
+```python
 from st_kaggle_connector import KaggleDatasetConnection
 import streamlit as st
 
