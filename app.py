@@ -53,7 +53,7 @@ st.subheader("Loading Netflix Movies and TV Shows dataset")
 
 # load data
 conn = st.connection("kaggle_datasets", type=KaggleDatasetConnection)
-df = conn.get(path='joebeachcapital/fast-food', filename='FastFoodNutritionMenu.csv', ttl=3600)
+df = conn.get(path='shivamb/netflix-shows', filename='netflix_titles.csv', ttl=3600)
 
 st.write('The dataset has {} rows and {} columns'.format(df.shape[0], df.shape[1]))
 
