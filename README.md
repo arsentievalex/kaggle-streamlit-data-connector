@@ -11,3 +11,6 @@ import streamlit as st
 conn = st.connection("kaggle_datasets", type=KaggleDatasetConnection)
 df = conn.get(path='shivamb/netflix-shows', filename='netflix_titles.csv', ttl=3600)
 ```
+
+Sample App:
+[st-kaggle-connector.png](https://postimg.cc/hJmHWQ2v)
