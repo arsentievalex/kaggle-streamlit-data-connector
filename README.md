@@ -5,9 +5,9 @@ Basic Kaggle-Streamlit connector for CSV files. Built using ExperimentalBaseConn
 
 Usage:
 ```python
-from connection import KaggleDatasetConnection
+from st_kaggle_connector import KaggleDatasetConnection
 import streamlit as st
 
-conn = st.experimental_connection("kaggle_datasets", type=KaggleDatasetConnection)
+conn = st.connection("kaggle_datasets", type=KaggleDatasetConnection)
 df = conn.get(path='shivamb/netflix-shows', filename='netflix_titles.csv', ttl=3600)
 ```
