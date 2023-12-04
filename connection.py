@@ -1,11 +1,11 @@
-from streamlit.connections import ExperimentalBaseConnection
+from streamlit.connections import BaseConnection
 import os
 import pandas as pd
 import zipfile
 import streamlit as st
 
 
-class KaggleDatasetConnection(ExperimentalBaseConnection):
+class KaggleDatasetConnection(BaseConnection):
 
     def _connect(self):
         # Set Kaggle credentials
