@@ -14,8 +14,8 @@ st.info('This is a demo app that presents basic use of custom Kaggle-Streamlit c
 [Kaggle](https://www.kaggle.com/) is the world's largest data science community. It enables users to explore and analyze a wide variety of public datasets.
 This app demonstrates a simple `KaggleDatasetConnection` which was built by extending the 
 [built-in BaseConnection](https://docs.streamlit.io/library/api-reference/connections/st.connections.experimentalbaseconnection)
-You can view the connection source code
-[here](https://github.com/arsentievalex/kaggle-streamlit-data-connector/blob/main/connection.py).
+You can pip install the component:
+`pip install st-kaggle-connector`
 """
 
 st.info('While Kaggle offers datasets in different formats, this connector ONLY supports CSV files')
