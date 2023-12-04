@@ -13,4 +13,4 @@ df = conn.get(path='shivamb/netflix-shows', filename='netflix_titles.csv', ttl=3
 ```
 
 Sample App:
-[st-kaggle-connector.png](https://postimg.cc/hJmHWQ2v)
+[![st-kaggle-connector.png](https://i.postimg.cc/vm2MnW9r/st-kaggle-connector.png)](https://postimg.cc/hJmHWQ2v)
