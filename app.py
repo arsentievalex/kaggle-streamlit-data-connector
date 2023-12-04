@@ -30,7 +30,7 @@ and the file name is `netflix_titles.csv`.
 """Using this example, the code to connect to the dataset would look like this:"""
 
 code = """
-from connection import KaggleDatasetConnection
+from st_kaggle_connector import KaggleDatasetConnection
 import streamlit as st
 
 conn = st.connection("kaggle_datasets", type=KaggleDatasetConnection)
